@@ -20,9 +20,9 @@
 	});
 </script>
 
-<div class="z-20 flex h-screen flex-col items-center justify-center">
+<div class="z-20 mt-8 flex h-screen flex-col items-center md:justify-center">
 	<h1 class="text-7xl font-bold tracking-widest">
-		<Logo class="throw-me relative z-20 size-96 {startHidden && 'invisible'}" />
+		<Logo class="throw-me relative z-20 size-64 md:size-96 {startHidden && 'invisible'}" />
 	</h1>
 
 	<CountdownTimer />
