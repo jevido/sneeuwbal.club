@@ -34,6 +34,6 @@
 		14 - 16 November
 	</p>
 	<p class="throw-me z-20 {startHidden && 'invisible'} text-muted-foreground z-20">
-		De rest komt nog
+		De rest komt wel
 	</p>
 </div>
