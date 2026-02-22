@@ -1,0 +1,18 @@
+name: Deploy to VPS
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy via bakery-agent
+        uses: appleboy/ssh-action@v1
+        with:
+          host: "46.225.73.54"
+          username: "bakery"
+          key: ${{ secrets.VPS_SSH_KEY }}
+          script: |
+            bakery deploy sneeuwbal.club --repo https://github.com/jevido/sneeuwbal.club.git --branch main
