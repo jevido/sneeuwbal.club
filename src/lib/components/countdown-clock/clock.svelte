@@ -2,7 +2,7 @@
 	import { SvelteDate } from 'svelte/reactivity';
 	import Card from './card.svelte';
 
-	let { target = '2025-11-14T20:00:00.000Z' } = $props();
+	let { target = '2026-11-13T20:00:00.000Z' } = $props();
 
 	let targetDate = new Date(target);
 	const currentDate = new SvelteDate(Date.now());

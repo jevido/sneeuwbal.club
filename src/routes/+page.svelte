@@ -9,6 +9,10 @@
 	});
 </script>
 
+<svelte:head>
+	<title>Sneeuwbal Sociëteit</title>
+</svelte:head>
+
 <main
 	class="relative min-h-screen overflow-hidden bg-gradient-to-b from-slate-900 to-slate-800 text-white"
 >
@@ -17,6 +21,3 @@
 	<HeroSection />
 </main>
 
-<svelte:head>
-	<title>Sneeuwbal Sociëteit</title>
-</svelte:head>
