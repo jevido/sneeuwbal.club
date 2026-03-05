@@ -11,8 +11,8 @@ jobs:
       - name: Deploy via bakery-agent
         uses: appleboy/ssh-action@v1
         with:
-          host: "46.225.73.54"
+          host: "91.107.228.148"
           username: "bakery"
-          key: ${{ secrets.VPS_SSH_KEY }}
+          key: ${{ secrets.BAKERY_SSH_KEY }}
           script: |
             bakery deploy sneeuwbal.club --repo https://github.com/jevido/sneeuwbal.club.git --branch main
