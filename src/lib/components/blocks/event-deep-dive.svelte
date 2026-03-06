@@ -54,7 +54,8 @@
 		},
 		{
 			role: 'Pils piet',
-			quote: 'De P in Piet staat voor pils, dus trek er nog een open want die brandstof ga je nodig hebben jochie - pils piet'
+			quote:
+				'De P in Piet staat voor pils, dus trek er nog een open want die brandstof ga je nodig hebben jochie - pils piet'
 		},
 		{
 			role: 'Aanrand piet',
@@ -71,6 +72,14 @@
 			.map((voice) => ({ voice, sort: Math.random() }))
 			.sort((a, b) => a.sort - b.sort)
 			.map(({ voice }) => voice);
+
+		const autoSlide = setInterval(() => {
+			currentVoice = (currentVoice + 1) % shuffledVoices.length;
+		}, 10000);
+
+		return () => {
+			clearInterval(autoSlide);
+		};
 	});
 
 	const previousVoice = () => {
@@ -110,10 +119,10 @@
 				10 jaar leven in de barre bunk beds
 			</h2>
 			<p class="mt-4 max-w-3xl text-sm leading-relaxed text-white/82 md:text-base">
-				Het is nou al een tijdje bezig, en we zijn gegroeid van 7 vage gasten die saucijzenbroodjes maken. Naar een stuk of wat.
-				Als me dat godver geen reden is om wat te doen. Dan weet ik het ook niet meer.
-				Sterker nog, ik weet het al niet meer.
-				Als je nou gewoon ff naar beneden scrolled. Wordt dit toch wel minder ongemakkelijk voor ons beide.
+				Het is nou al een tijdje bezig, en we zijn gegroeid van 7 vage gasten die saucijzenbroodjes
+				maken. Naar een stuk of wat. Als me dat godver geen reden is om wat te doen. Dan weet ik het
+				ook niet meer. Sterker nog, ik weet het al niet meer. Als je nou gewoon ff naar beneden
+				scrolled. Wordt dit toch wel minder ongemakkelijk voor ons beide.
 			</p>
 		</div>
 
@@ -185,7 +194,7 @@
 						class="rounded-full border border-white/30 bg-black/20 px-4 py-2 text-xs tracking-[0.15em] text-white/88 uppercase transition hover:bg-white/15"
 						aria-label="Vorige quote"
 					>
-						niet verder
+						Niet volgende
 					</button>
 					<button
 						type="button"
@@ -193,7 +202,7 @@
 						class="rounded-full border border-white/30 bg-black/20 px-4 py-2 text-xs tracking-[0.15em] text-white/88 uppercase transition hover:bg-white/15"
 						aria-label="Volgende quote"
 					>
-						Verder
+						Volgende
 					</button>
 				</div>
 			</div>
