@@ -3,6 +3,7 @@
 	import EventDeepDive from '$lib/components/blocks/event-deep-dive.svelte';
 	import HeroSection from '$lib/components/blocks/hero-section.svelte';
 	import SnowCanvas from '$lib/components/blocks/snow-canvas.svelte';
+	import inactiveGif from '$lib/inactive.gif';
 
 	import { oneko } from '$lib/oneko/beer';
 	const secretSequence = [
@@ -20,6 +21,9 @@
 	let secretIndex = 0;
 	let easterEggActive = $state(false);
 	let easterEggTimeout = null;
+	let inactiveEggActive = $state(false);
+	let inactivityTimeout = null;
+	let inactivityHideTimeout = null;
 	let spriteTicker = $state(0);
 	let spriteSwarm = $state([]);
 	let weirdWord = $state('');
@@ -122,7 +126,23 @@
 	});
 
 	onMount(() => {
+		const resetInactivity = () => {
+			inactiveEggActive = false;
+			clearTimeout(inactivityTimeout);
+			clearTimeout(inactivityHideTimeout);
+
+			inactivityTimeout = setTimeout(() => {
+				inactiveEggActive = true;
+				inactivityHideTimeout = setTimeout(() => {
+					inactiveEggActive = false;
+				}, 7000);
+			}, 20000);
+		};
+
+		resetInactivity();
+
 		const onKeyDown = (event) => {
+			resetInactivity();
 			const key = event.key.length === 1 ? event.key.toLowerCase() : event.key;
 
 			if (key === secretSequence[secretIndex]) {
@@ -143,10 +163,20 @@
 			secretIndex = key === secretSequence[0] ? 1 : 0;
 		};
 
+		const onActivity = () => resetInactivity();
+
 		window.addEventListener('keydown', onKeyDown);
+		window.addEventListener('mousemove', onActivity, { passive: true });
+		window.addEventListener('touchstart', onActivity, { passive: true });
+		window.addEventListener('scroll', onActivity, { passive: true });
 		return () => {
 			clearTimeout(easterEggTimeout);
+			clearTimeout(inactivityTimeout);
+			clearTimeout(inactivityHideTimeout);
 			window.removeEventListener('keydown', onKeyDown);
+			window.removeEventListener('mousemove', onActivity);
+			window.removeEventListener('touchstart', onActivity);
+			window.removeEventListener('scroll', onActivity);
 		};
 	});
 </script>
@@ -173,6 +203,12 @@
 	<HeroSection />
 	<EventDeepDive />
 
+	{#if inactiveEggActive && !easterEggActive}
+		<div class="inactive-realm fixed inset-0 z-40">
+			<img src={inactiveGif} alt="" class="inactive-ghost" />
+		</div>
+	{/if}
+
 	{#if easterEggActive}
 		<div class="secret-realm fixed inset-0 z-50">
 			<div class="secret-noise"></div>
@@ -191,6 +227,25 @@
 </main>
 
 <style>
+	.inactive-realm {
+		pointer-events: none;
+		display: grid;
+		place-items: center;
+	}
+
+	.inactive-ghost {
+		width: min(46vw, 360px);
+		max-width: 70vw;
+		image-rendering: pixelated;
+		opacity: 0.1;
+		mix-blend-mode: screen;
+		filter: saturate(0.8) contrast(1.15) drop-shadow(0 0 28px rgba(167, 255, 242, 0.34));
+		animation:
+			inactive-fade 7s ease-in-out forwards,
+			inactive-drift 2.4s ease-in-out infinite alternate,
+			inactive-glitch 0.17s steps(2, end) infinite;
+	}
+
 	.secret-realm {
 		pointer-events: none;
 		isolation: isolate;
@@ -344,6 +399,47 @@
 		}
 		100% {
 			filter: hue-rotate(-18deg) contrast(0.94) saturate(0.86);
+		}
+	}
+
+	@keyframes inactive-fade {
+		0% {
+			opacity: 0;
+			transform: scale(0.92) rotate(-2deg);
+		}
+		22% {
+			opacity: 0.88;
+		}
+		72% {
+			opacity: 0.56;
+		}
+		100% {
+			opacity: 0;
+			transform: scale(1.06) rotate(2deg);
+		}
+	}
+
+	@keyframes inactive-drift {
+		0% {
+			transform: translateY(8px);
+		}
+		100% {
+			transform: translateY(-7px);
+		}
+	}
+
+	@keyframes inactive-glitch {
+		0% {
+			clip-path: inset(0 0 0 0);
+		}
+		33% {
+			clip-path: inset(3% 0 12% 0);
+		}
+		66% {
+			clip-path: inset(12% 0 2% 0);
+		}
+		100% {
+			clip-path: inset(0 0 0 0);
 		}
 	}
 </style>
