@@ -41,23 +41,23 @@
 	const regiemVoices = [
 		{
 			name: 'Hakker',
-			role: '',
+			role: 'Steekpiet',
 			quote: ''
 		},
 		{
 			name: 'Makker',
-			role: 'temu sinterklaas',
+			role: 'Temu sinterklaas',
 			quote: 'Piek vroeg, drink hard, dan wil iedereen dat je rustiger doet, en ga je niet te hard'
 		},
 		{
 			name: 'Stakker',
-			role: '',
+			role: 'Stoomboot piet',
 			quote: ''
 		},
 		{
 			name: 'Rakker',
 			role: 'Aanrand piet',
-			quote: 'Neem je moeder mee, hebben we allebei een goeie avond'
+			quote: 'Neem je moeder mee'
 		}
 	];
 
