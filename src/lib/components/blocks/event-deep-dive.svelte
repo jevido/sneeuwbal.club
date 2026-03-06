@@ -23,11 +23,12 @@
 	];
 
 	const highlights = [
-		'Live DJ set met requests',
+		'Caipirinha uurtje',
 		'Onderling casino',
 		'De proeverij',
 		'Ding 4',
-		'Bier',
+		'Jij',
+		'Suaizjenbroodjes bakken',
 		'Finale van Chaos pong'
 	];
 
