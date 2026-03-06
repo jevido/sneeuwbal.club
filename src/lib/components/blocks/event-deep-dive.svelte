@@ -174,7 +174,7 @@
 				Het Regiem 2026
 			</p>
 			<h3 class="font-display text-2xl font-bold md:text-3xl">
-				Het advies wil je wat advies geven voor dit jaar
+				Het regiem wil je wat advies geven voor dit jaar
 			</h3>
 			<div class="mt-3 flex items-center justify-between gap-3">
 				<div class="hidden w-full justify-between gap-2 sm:flex">
