@@ -9,7 +9,7 @@
 	onMount(() => {
 		startHidden = false;
 
-		gsap.from('.reveal-me', {
+		gsap.from('.throw-me, .throw-me *', {
 			opacity: 0,
 			y: 56,
 			rotate: 4,
@@ -24,16 +24,16 @@
 	<section>
 		<h1 class="text-center">
 			<Logo
-				class="reveal-me relative z-20 mx-auto size-64 drop-shadow-[0_16px_32px_rgba(0,0,0,0.45)] md:size-[24rem] {startHidden &&
+				class="throw-me relative z-20 mx-auto size-64 drop-shadow-[0_16px_32px_rgba(0,0,0,0.45)] md:size-[24rem] {startHidden &&
 					'invisible'}"
 			/>
 		</h1>
 
-		<div class="reveal-me">
+		<div class="throw-me">
 			<CountdownTimer />
 		</div>
 
-		<div class="reveal-me mt-2 text-center">
+		<div class="throw-me mt-2 text-center">
 			<p
 				class="font-display bg-gradient-to-r from-emerald-200 via-cyan-100 to-amber-100 bg-clip-text text-3xl font-extrabold tracking-[0.18em] text-transparent uppercase md:text-5xl"
 			>
