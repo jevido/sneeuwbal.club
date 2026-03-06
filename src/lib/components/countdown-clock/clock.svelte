@@ -26,7 +26,9 @@
 	});
 </script>
 
-<div class="z-10 grid w-5/6 grid-cols-2 justify-center gap-4 pb-4 md:w-3/6 md:grid-cols-4 md:gap-8">
+<div
+	class="countdown-grid z-10 grid w-full grid-cols-2 justify-center gap-5 pb-4 md:mx-auto md:w-4/5 md:grid-cols-4 md:gap-8"
+>
 	<Card name="Dagen" number={time.days} />
 	<Card name="Uren" number={time.hours} />
 	<Card name="Minuten" number={time.minutes} />

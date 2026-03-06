@@ -34,7 +34,7 @@
 	};
 </script>
 
-<div class="flex flex-col gap-4 md:gap-8">
+<div class="timer-card flex flex-col gap-4 md:gap-6">
 	{#key number}
 		<div class="wrapper">
 			<div class="top-front">
@@ -59,29 +59,27 @@
 			</div>
 		</div>
 	{/key}
-	<p class="-mt-4 text-center">{name}</p>
+	<p class="-mt-3 text-center">{name}</p>
 </div>
 
 <style scoped>
-	:root {
-		--normal-text-color: hsl(237, 18%, 89%);
-		--dark-background: hsl(236, 21%, 26%);
-		--very-dark-background: hsl(235, 16%, 14%);
-		--reddish: hsl(345, 84%, 66%);
-	}
-
-	p {
-		color: var(--normal-text-color);
-		font-size: 1rem;
-		letter-spacing: 3px;
+	.timer-card p {
+		color: color-mix(in oklab, white 74%, #84ffe5 26%);
+		font-size: 0.72rem;
+		font-weight: 700;
+		letter-spacing: 0.36em;
+		text-transform: uppercase;
 	}
 
 	.wrapper {
 		display: flex;
 		flex-direction: column;
-		border-radius: 7px;
 		position: relative;
-		box-shadow: 0 10px 5px rgba(0, 0, 0, 0.125);
+		border-radius: 16px;
+		box-shadow:
+			0 22px 40px rgba(1, 8, 16, 0.42),
+			inset 0 1px 0 rgba(255, 255, 255, 0.22);
+		overflow: hidden;
 	}
 	.top-front,
 	.top-flip,
@@ -97,10 +95,10 @@
 
 	.top-front,
 	.top-flip {
-		background-color: var(--dark-background);
-		border-bottom: 1px solid var(--very-dark-background);
-		filter: brightness(75%);
-		border-radius: 7px 7px 0 0;
+		background: linear-gradient(175deg, rgba(8, 24, 32, 0.9), rgba(12, 49, 56, 0.88));
+		border-bottom: 1px solid rgba(186, 255, 241, 0.3);
+		filter: brightness(90%);
+		border-radius: 16px 16px 0 0;
 	}
 
 	.top-flip {
@@ -126,8 +124,8 @@
 	.bottom-flip {
 		display: flex;
 		align-items: flex-end;
-		background-color: var(--dark-background);
-		border-radius: 0 0 7px 7px;
+		background: linear-gradient(180deg, rgba(2, 17, 23, 0.92), rgba(2, 24, 31, 0.95));
+		border-radius: 0 0 16px 16px;
 	}
 
 	.bottom-flip {
@@ -147,21 +145,25 @@
 
 	span {
 		display: inline-block;
-		color: var(--reddish);
+		color: #9cffea;
+		text-shadow:
+			0 0 12px rgba(122, 255, 233, 0.55),
+			0 0 28px rgba(122, 255, 233, 0.15);
 		font-size: 2.5em;
+		font-weight: 700;
 		line-height: 1;
 	}
 
-	/* For center corner rounded card */
 	:is(.top-front, .top-flip, .bottom-front, .bottom-flip)::before,
 	:is(.top-front, .top-flip, .bottom-front, .bottom-flip)::after {
-		--size: 7px;
+		--size: 9px;
 		content: '';
 		position: absolute;
-
-		background-color: var(--very-dark-background);
+		background-color: rgba(3, 20, 30, 0.95);
 		border-radius: 50%;
 		z-index: 1;
+		width: var(--size);
+		height: var(--size);
 	}
 
 	:is(.top-front, .top-flip)::before {
@@ -200,10 +202,6 @@
 			height: 1em;
 			text-align: center;
 			width: 0.75em;
-		}
-
-		p {
-			font-size: 1rem;
 		}
 		:is(.top-front, .top-flip, .bottom-front, .bottom-flip)::before,
 		:is(.top-front, .top-flip, .bottom-front, .bottom-flip)::after {

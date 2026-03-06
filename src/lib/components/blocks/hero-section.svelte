@@ -1,39 +1,47 @@
 <script>
-	import gsap from 'gsap';
+	import { onMount } from 'svelte';
+	import { gsap } from 'gsap';
 	import Logo from '$lib/logo.svelte';
 	import CountdownTimer from '$lib/components/blocks/countdown-timer.svelte';
 
-	let logoElement = $state();
 	let startHidden = $state(true);
 
-	$effect(() => {
+	onMount(() => {
 		startHidden = false;
 
-		gsap.from('.throw-me, .throw-me *', {
+		gsap.from('.reveal-me', {
 			opacity: 0,
-			y: -50,
-			rotate: 45,
-			stagger: 0.1,
-			duration: 1,
-			ease: 'back.out(1.7)'
+			y: 56,
+			rotate: 4,
+			stagger: 0.08,
+			duration: 0.85,
+			ease: 'power3.out'
 		});
 	});
 </script>
 
-<div class="z-20 mt-8 flex h-screen flex-col items-center md:justify-center">
-	<h1 class="text-7xl font-bold tracking-widest">
-		<Logo class="throw-me relative z-20 size-64 md:size-96 {startHidden && 'invisible'}" />
-	</h1>
+<div class="relative z-20 flex min-h-screen items-center justify-center px-4 py-8 md:px-8">
+	<section>
+		<h1 class="text-center">
+			<Logo
+				class="reveal-me relative z-20 mx-auto size-64 drop-shadow-[0_16px_32px_rgba(0,0,0,0.45)] md:size-[24rem] {startHidden &&
+					'invisible'}"
+			/>
+		</h1>
 
-	<CountdownTimer />
+		<div class="reveal-me">
+			<CountdownTimer />
+		</div>
 
-	<p
-		class="throw-me z-20 {startHidden &&
-			'invisible'} bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-4xl font-bold text-transparent"
-	>
-		14 - 16 November
-	</p>
-	<p class="throw-me z-20 {startHidden && 'invisible'} text-muted-foreground z-20">
-		De rest komt wel
-	</p>
+		<div class="reveal-me mt-2 text-center">
+			<p
+				class="font-display bg-gradient-to-r from-emerald-200 via-cyan-100 to-amber-100 bg-clip-text text-3xl font-extrabold tracking-[0.18em] text-transparent uppercase md:text-5xl"
+			>
+				14 - 16 November
+			</p>
+			<p class="mt-2 text-sm tracking-[0.4em] text-white/75 uppercase md:text-base">
+				Kouwe lucht. Warm bier.
+			</p>
+		</div>
+	</section>
 </div>
