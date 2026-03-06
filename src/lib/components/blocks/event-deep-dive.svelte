@@ -40,22 +40,22 @@
 
 	const regiemVoices = [
 		{
-			name: 'Hakker',
 			role: 'Steekpiet',
 			quote: ''
 		},
 		{
-			name: 'Makker',
 			role: 'Temu sinterklaas',
 			quote: 'Piek vroeg, drink hard, dan wil iedereen dat je rustiger doet, en ga je niet te hard'
 		},
 		{
-			name: 'Stakker',
 			role: 'Stoomboot piet',
 			quote: ''
 		},
 		{
-			name: 'Rakker',
+			role: 'Pils piet',
+			quote: 'De P in Piet staat voor pils, dus trek er nog een open want die brandstof ga je nodig hebben jochie - pils piet'
+		},
+		{
 			role: 'Aanrand piet',
 			quote: 'Neem je moeder mee'
 		}
@@ -209,7 +209,7 @@
 					{#each shuffledVoices as voice}
 						<article class="min-w-full p-6 md:p-8">
 							<p class="text-[0.7rem] font-semibold tracking-[0.2em] text-cyan-100 uppercase">
-								{voice.name} · {voice.role}
+								{voice.role}
 							</p>
 							<p class="mt-4 max-w-3xl text-base leading-relaxed text-white/92 md:text-xl">
 								{voice.quote}
