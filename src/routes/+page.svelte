@@ -1,5 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
+	import EventDeepDive from '$lib/components/blocks/event-deep-dive.svelte';
 	import HeroSection from '$lib/components/blocks/hero-section.svelte';
 	import SnowCanvas from '$lib/components/blocks/snow-canvas.svelte';
 
@@ -156,7 +157,7 @@
 
 <main
 	class:secret-dimension={easterEggActive}
-	class="site-shell relative min-h-screen overflow-hidden text-white"
+	class="site-shell relative min-h-screen overflow-x-hidden text-white"
 >
 	<SnowCanvas />
 	<div
@@ -170,6 +171,7 @@
 	></div>
 
 	<HeroSection />
+	<EventDeepDive />
 
 	{#if easterEggActive}
 		<div class="secret-realm fixed inset-0 z-50">
