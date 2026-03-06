@@ -106,12 +106,13 @@
 				Wat Gaan We Doen
 			</p>
 			<h2 class="font-display text-3xl leading-tight font-extrabold md:text-5xl">
-				Meer dan een weekend. Dit wordt een mini-legende.
+				10 jaar leven in de barre bunk beds
 			</h2>
 			<p class="mt-4 max-w-3xl text-sm leading-relaxed text-white/82 md:text-base">
-				De eerste view blijft volledig sfeer en countdown. Maar als je naar beneden scrolt, krijg je
-				het echte verhaal: ritme van het weekend, wat er op het programma staat, en hoe je
-				voorbereid aanhaakt.
+				Het is nou al een tijdje bezig, en we zijn gegroeid van 7 vage gasten die saucijzenbroodjes maken. Naar een stuk of wat.
+				Als me dat godver geen reden is om wat te doen. Dan weet ik het ook niet meer.
+				Sterker nog, ik weet het al niet meer.
+				Als je nou gewoon ff naar beneden scrolled. Wordt dit toch wel minder ongemakkelijk voor ons beide.
 			</p>
 		</div>
 
