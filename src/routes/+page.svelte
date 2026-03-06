@@ -1,5 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
+	import CorporateChaosGallery from '$lib/components/blocks/corporate-chaos-gallery.svelte';
 	import EventDeepDive from '$lib/components/blocks/event-deep-dive.svelte';
 	import HeroSection from '$lib/components/blocks/hero-section.svelte';
 	import SnowCanvas from '$lib/components/blocks/snow-canvas.svelte';
@@ -202,6 +203,7 @@
 
 	<HeroSection />
 	<EventDeepDive />
+	<CorporateChaosGallery />
 
 	{#if inactiveEggActive && !easterEggActive}
 		<div class="inactive-realm fixed inset-0 z-40">
