@@ -60,6 +60,10 @@
 		{
 			role: 'Aanrand piet',
 			quote: 'Neem je moeder mee'
+		},
+		{
+			role: 'Uitvinder van de kater',
+			quote: 'Altijd blijven lachen, ook als je in bed ligt'
 		}
 	];
 

@@ -63,9 +63,9 @@
 		<div
 			class="mb-6 rounded-[1.4rem] border border-red-200/20 bg-black/45 p-5 shadow-[0_22px_55px_rgba(0,0,0,0.5)] backdrop-blur-lg md:mb-8 md:p-7"
 		>
-			<p class="text-xs font-semibold tracking-[0.24em] text-amber-100 uppercase">Fotowall</p>
-			<h3 class="font-display mt-2 text-3xl font-extrabold md:text-5xl">
-				Plak er beelden in. Maak er een puinhoop van.
+			<p class="text-xs font-semibold tracking-[0.24em] text-amber-100 uppercase">De muur</p>
+			<h3 class="font-display mt-2 text-2xl font-extrabold md:text-3xl">
+				Godver, echt keertje foto's maken
 			</h3>
 		</div>
 
@@ -87,22 +87,21 @@
 	.comic-wall {
 		position: relative;
 		aspect-ratio: 16 / 9;
-		background: #000;
-		border: 5px solid #050505;
 		overflow: hidden;
 	}
 
 	.comic-panel {
 		position: absolute;
-		padding: 0.42rem;
+		padding: 0.75rem;
 		background: #020202;
-		border: 2px solid rgb(0 0 0 / 0.95);
+		border: 4px solid rgb(0 0 0 / 0.98);
 		clip-path: var(--cut);
 		transform: rotate(var(--rot));
 		overflow: hidden;
 		box-shadow:
-			0 14px 28px rgb(0 0 0 / 0.46),
-			0 0 0 1px rgb(255 255 255 / 0.1) inset;
+			0 20px 34px rgb(0 0 0 / 0.62),
+			0 0 0 2px rgb(255 255 255 / 0.16) inset,
+			0 0 0 5px rgb(0 0 0 / 0.95) inset;
 		transition:
 			transform 180ms ease,
 			z-index 0ms linear 180ms;

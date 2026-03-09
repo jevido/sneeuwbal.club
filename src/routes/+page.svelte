@@ -1,6 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
-	import CorporateChaosGallery from '$lib/components/blocks/corporate-chaos-gallery.svelte';
+	import CorporateChaosGallery from '$lib/components/blocks/gallery.svelte';
 	import EventDeepDive from '$lib/components/blocks/event-deep-dive.svelte';
 	import HeroSection from '$lib/components/blocks/hero-section.svelte';
 	import SnowCanvas from '$lib/components/blocks/snow-canvas.svelte';
