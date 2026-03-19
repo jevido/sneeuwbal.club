@@ -126,9 +126,56 @@
 		transform: scale(1.05);
 	}
 
+	@media (max-width: 1200px) {
+		.comic-wall {
+			aspect-ratio: 4 / 3;
+		}
+	}
+
 	@media (max-width: 900px) {
 		.comic-wall {
-			aspect-ratio: 9 / 16;
+			position: static;
+			aspect-ratio: auto;
+			display: grid;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 0.75rem;
+			padding: 0.25rem;
+			overflow: visible;
+		}
+
+		.comic-panel {
+			position: static;
+			left: auto;
+			top: auto;
+			width: auto;
+			height: auto;
+			z-index: auto;
+			transform: none;
+			transition: transform 180ms ease;
+			clip-path: none;
+			border-radius: 0.9rem;
+			box-shadow:
+				0 14px 18px rgb(0 0 0 / 0.32),
+				0 0 0 2px rgb(255 255 255 / 0.12) inset;
+		}
+
+		.comic-panel:hover {
+			transform: scale(1.02);
+			z-index: auto;
+		}
+
+		.comic-panel img {
+			clip-path: none;
+			transform: none;
+			width: 100%;
+			height: 220px;
+			object-fit: cover;
+		}
+	}
+
+	@media (max-width: 600px) {
+		.comic-wall {
+			grid-template-columns: 1fr;
 		}
 	}
 </style>
