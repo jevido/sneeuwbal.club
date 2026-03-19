@@ -203,7 +203,7 @@
 
 	<HeroSection />
 	<EventDeepDive />
-	<CorporateChaosGallery />
+	<!-- <CorporateChaosGallery /> -->
 
 	{#if inactiveEggActive && !easterEggActive}
 		<div class="inactive-realm fixed inset-0 z-40">
