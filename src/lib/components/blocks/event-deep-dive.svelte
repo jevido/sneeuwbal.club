@@ -28,6 +28,7 @@
 		'De proeverij',
 		'Ding 4',
 		'Jij',
+		'Wokpan met  kookplaat',
 		'Suaizjenbroodjes bakken',
 		'Finale van Chaos pong'
 	];
