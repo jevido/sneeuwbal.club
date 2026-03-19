@@ -43,7 +43,7 @@
 	const regiemVoices = [
 		{
 			role: 'Steekpiet',
-			quote: ''
+			quote: 'Zorg voor een goede steek, want zonder steek ben je niks waard'
 		},
 		{
 			role: 'Temu sinterklaas',
@@ -51,7 +51,7 @@
 		},
 		{
 			role: 'Stoomboot piet',
-			quote: ''
+			quote: 'Zorg dat je altijd een stoomboot bij de hand hebt, want als je die nodig hebt, heb je hem nodig'
 		},
 		{
 			role: 'Pils piet',
@@ -63,7 +63,7 @@
 			quote: 'Neem je moeder mee'
 		},
 		{
-			role: 'Uitvinder van de kater',
+			role: 'De uitvinder van de kater',
 			quote: 'Altijd blijven lachen, ook als je in bed ligt'
 		}
 	];
