@@ -224,7 +224,7 @@
 					{#each shuffledVoices as voice}
 						<article class="min-w-full p-6 md:p-8">
 							<p class="text-[0.7rem] font-semibold tracking-[0.2em] text-cyan-100 uppercase">
-								{voice.role}
+								{voice.role} zegt
 							</p>
 							<p class="mt-4 max-w-3xl text-base leading-relaxed text-white/92 md:text-xl">
 								{voice.quote}
