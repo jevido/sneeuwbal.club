@@ -37,7 +37,7 @@
 			<p
 				class="font-display bg-gradient-to-r from-emerald-200 via-cyan-100 to-amber-100 bg-clip-text text-3xl font-extrabold tracking-[0.18em] text-transparent uppercase md:text-5xl"
 			>
-				14 - 16 November
+				13 - 15 November
 			</p>
 			<p class="mt-2 text-sm tracking-[0.4em] text-white/75 uppercase md:text-base">
 				Kouwe lucht. Warm bier.
